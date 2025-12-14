@@ -1,8 +1,8 @@
-/* Profile.css */
+
 
 .profile-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0a1929 0%, #1a3a52 100%);
+  min-height: 100%;
+
   padding: 40px 20px;
 }
 
@@ -33,7 +33,7 @@
   margin-top: 5px;
 }
 
-/* Info Display */
+/*style de save */
 .info-item {
   margin-bottom: 20px;
   padding: 12px 0;
@@ -49,7 +49,7 @@
   color: #555;
 }
 
-/* Form Styles */
+/* styles de formullaire */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -71,7 +71,7 @@
 .form-group input {
   width: 100%;
   padding: 12px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #969191;
   border-radius: 8px;
   font-size: 15px;
   transition: border 0.3s;
@@ -94,9 +94,11 @@
   font-weight: 500;
 }
 
-/* Bank Card Section */
+
+
+
 .bank-section {
-  background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(0, 151, 167, 0.1) 100%);
+  background: rgba(59, 181, 193, 0.1);
   padding: 25px;
   border-radius: 12px;
   margin-bottom: 25px;

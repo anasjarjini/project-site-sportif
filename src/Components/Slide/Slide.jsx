@@ -1,9 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import './Introduction.css';
+import './Slide.css';
 
-function IntroductionBanner() {
-const slides = [
+function Slides() {
+const slide = [
   {
     img: 'https://sportsexcellence.com/cdn/shop/articles/CCM_code_blue_6ad88ffa-7608-46ae-b288-740d20c51c7d.jpg?v=1750262216&width=1900',
     subtitle: '🔥 Nouvelle Collection 2025',
@@ -28,12 +28,20 @@ const slides = [
     btnText: 'Explorer la Collection',
     btnLink: '/#Product'
   },
+    {
+    img: 'https://xboxwire.thesourcemediaassets.com/sites/2/2022/10/DBX_Family-16x9-05-alt-8e2bdd383f3aea97deb1.jpg',
+    subtitle: '🎮 Gaming Store',
+  title: 'Consoles & Accessoires Gaming',
+  desc: 'Les meilleurs produits gaming - Des accessoires aux jeux rétro',
+  btnText: 'Voir les Produits',
+  btnLink: '/#Product'
+    }
 ];
   
   return (
     <div className="banner-container" id="home">
       <Carousel indicators controls interval={4000} fade className="custom-carousel">
-        {slides.map((slide, index) => (
+        {slide.map((slide, index) => (
           <Carousel.Item key={index}>
             <div className="slide-wrapper">
               <img className="slide-img" src={slide.img} alt={slide.title} />
@@ -55,4 +63,4 @@ const slides = [
   );
 }
 
-export default IntroductionBanner;
+export default Slides;

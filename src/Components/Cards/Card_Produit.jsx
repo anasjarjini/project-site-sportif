@@ -13,7 +13,30 @@ function ProduitSports({id, name, price, oldPrice, image, description, category}
   const ButtonText=isIncart ? "Annuler":"🛒 Ajouter au panier";
   const ButtonColor=isIncart ? '#0a6474ff':'#0f3e47ff';
 
-
+const [userRating, setUserRating] = useState(0);
+  const renderStars = () => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    stars.push(
+      <span
+        key={i}
+        onClick={() => setUserRating(i)}   
+        onMouseEnter={(e) => (e.target.style.transform = "scale(1.2)")}
+        onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
+        style={{
+          color: i <= userRating ? "#f5c518" : "#c1c1c1",
+          fontSize: "25px",
+          marginRight: "2px",
+          cursor: "pointer",
+          transition: "0.2s"
+        }}
+      >
+        ★
+      </span>
+    );
+  }
+  return stars;
+};
 
   const prudact={
     id,
@@ -83,7 +106,10 @@ function ProduitSports({id, name, price, oldPrice, image, description, category}
             {description}
           </h5>
           
-          
+          <div className="mb-2 d-flex align-items-center">
+  {renderStars()}
+</div>
+
           
           <div className="mt-auto">
             <h1 className="fw-bold text-dark mb-1" style={{fontSize: '25px'}}>
@@ -107,12 +133,12 @@ function ProduitSports({id, name, price, oldPrice, image, description, category}
                 transition: 'all 0.2s ease'
               }}
               onMouseEnter={(e) => {
-                // e.currentTarget.style.background = '#27889aff';
+                
                 e.currentTarget.style.transform = 'scale(1)';
             
               }}
               onMouseLeave={(e) => {
-                // e.currentTarget.style.background = '#0e333aff';
+               
                 e.currentTarget.style.transform = 'scale(1.02)';
                 e.currentTarget.style.boxShadow = 'none';
               }}  
@@ -125,9 +151,7 @@ function ProduitSports({id, name, price, oldPrice, image, description, category}
                   addToCart(prudact); 
                 }
                 }
-              }
-
-              
+              } 
             >
            {ButtonText}
             </button>

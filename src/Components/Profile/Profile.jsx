@@ -38,27 +38,24 @@ export default function Profile() {
 
     if (!firstName.trim()) newErrors.firstName = "Le prénom est requis";
     if (!lastName.trim()) newErrors.lastName = "Le nom est requis";
-    
+
     if (!email.trim()) {
       newErrors.email = "L'email est requis";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "L'email n'est pas valide";
-    }
-    
+    } 
+
     if (!phone.trim()) {
       newErrors.phone = "Le téléphone est requis";
-    } else if (!/^(\+212|0)[5-7]\d{8}$/.test(phone.replace(/\s/g, ''))) {
-      newErrors.phone = "Le numéro de téléphone n'est pas valide";
-    }
-    
+    } 
+
     if (!address.trim()) newErrors.address = "L'adresse est requise";
-    
+
     if (password && password.length < 6) {
-      newErrors.password = "Le mot de passe doit contenir au moins 6 caractères";
+      newErrors.password =
+        "Le mot de passe doit contenir au moins 6 caractères";
     }
 
     if (cardNumber) {
-      const cleanCard = cardNumber.replace(/\s/g, '');
+      const cleanCard = cardNumber.replace(/\s/g, "");
       if (cleanCard.length !== 16) {
         newErrors.cardNumber = "Le numéro de carte doit contenir 16 chiffres";
       }
@@ -69,7 +66,7 @@ export default function Profile() {
     }
 
     if (cardNumber && expiryDate) {
-      const [month, year] = expiryDate.split('/');
+      const [month, year] = expiryDate.split("/");
       if (!month || !year || parseInt(month) < 1 || parseInt(month) > 12) {
         newErrors.expiryDate = "La date d'expiration n'est pas valide";
       }
@@ -86,7 +83,16 @@ export default function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const data = { firstName, lastName, email, phone, address, cardNumber, cardName, expiryDate };
+      const data = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        address,
+        cardNumber,
+        cardName,
+        expiryDate,
+      };
       localStorage.setItem("profileData", JSON.stringify(data));
       setIsSaved(true);
       setErrors({});
@@ -94,8 +100,8 @@ export default function Profile() {
   };
 
   const formatCardNumber = (value) => {
-    const numbers = value.replace(/\s/g, '');
-    const formatted = numbers.match(/.{1,4}/g)?.join(' ') || numbers;
+    const numbers = value.replace(/\s/g, "");
+    const formatted = numbers.match(/.{1,4}/g)?.join(" ") || numbers;
     return formatted.substring(0, 19);
   };
 
@@ -106,9 +112,9 @@ export default function Profile() {
   };
 
   const formatExpiryDate = (value) => {
-    const numbers = value.replace(/\D/g, '');
+    const numbers = value.replace(/\D/g, "");
     if (numbers.length >= 2) {
-      return numbers.substring(0, 2) + '/' + numbers.substring(2, 4);
+      return numbers.substring(0, 2) + "/" + numbers.substring(2, 4);
     }
     return numbers;
   };
@@ -133,12 +139,16 @@ export default function Profile() {
         <div className="profile-card">
           <div className="profile-header">
             <BsPersonCircle size={90} color="#00bcd4" />
-            <h2 className="profile-title">{lastName} {firstName}</h2>
+            <h2 className="profile-title">
+              {lastName} {firstName}
+            </h2>
           </div>
 
           <div className="info-item">
             <strong>Nom complet :</strong>
-            <span>{firstName} {lastName}</span>
+            <span>
+              {lastName} {firstName}
+            </span>
           </div>
           <div className="info-item">
             <strong>Email :</strong>
@@ -185,9 +195,11 @@ export default function Profile() {
     <div className="profile-container">
       <div className="profile-card">
         <div className="profile-header">
-          <BsPersonCircle size={90} color="#00bcd4" />
-          <h2 className="profile-title">Mon Profil</h2>
-          <p className="profile-subtitle">Modifier vos informations personnelles</p>
+          <BsPersonCircle size={90} color="#218f9dff" />
+          <h2 className="profile-title">Profil</h2>
+          <p className="profile-subtitle">
+            Modifier vos informations personnelles
+          </p>
         </div>
 
         <div className="form-grid">
@@ -196,11 +208,16 @@ export default function Profile() {
             <input
               type="text"
               value={firstName}
-              onChange={(e) => { setFirstName(e.target.value); clearError('firstName'); }}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+                clearError("firstName");
+              }}
               placeholder="Votre prénom"
-              className={errors.firstName ? 'input-error' : ''}
+              className={errors.firstName ? "input-error" : ""}
             />
-            {errors.firstName && <span className="error-message">{errors.firstName}</span>}
+            {errors.firstName && (
+              <span className="error-message">{errors.firstName}</span>
+            )}
           </div>
 
           <div className="form-group">
@@ -208,11 +225,16 @@ export default function Profile() {
             <input
               type="text"
               value={lastName}
-              onChange={(e) => { setLastName(e.target.value); clearError('lastName'); }}
+              onChange={(e) => {
+                setLastName(e.target.value);
+                clearError("lastName");
+              }}
               placeholder="Votre nom"
-              className={errors.lastName ? 'input-error' : ''}
+              className={errors.lastName ? "input-error" : ""}
             />
-            {errors.lastName && <span className="error-message">{errors.lastName}</span>}
+            {errors.lastName && (
+              <span className="error-message">{errors.lastName}</span>
+            )}
           </div>
         </div>
 
@@ -222,11 +244,16 @@ export default function Profile() {
             <input
               type="email"
               value={email}
-              onChange={(e) => { setEmail(e.target.value); clearError('email'); }}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                clearError("email");
+              }}
               placeholder="Entrer votre email"
-              className={errors.email ? 'input-error' : ''}
+              className={errors.email ? "input-error" : ""}
             />
-            {errors.email && <span className="error-message">{errors.email}</span>}
+            {errors.email && (
+              <span className="error-message">{errors.email}</span>
+            )}
           </div>
 
           <div className="form-group">
@@ -234,11 +261,16 @@ export default function Profile() {
             <input
               type="tel"
               value={phone}
-              onChange={(e) => { setPhone(e.target.value); clearError('phone'); }}
+              onChange={(e) => {
+                setPhone(e.target.value);
+                clearError("phone");
+              }}
               placeholder="+212 6 XX XX XX XX"
-              className={errors.phone ? 'input-error' : ''}
+              className={errors.phone ? "input-error" : ""}
             />
-            {errors.phone && <span className="error-message">{errors.phone}</span>}
+            {errors.phone && (
+              <span className="error-message">{errors.phone}</span>
+            )}
           </div>
         </div>
 
@@ -248,11 +280,16 @@ export default function Profile() {
             <input
               type="text"
               value={address}
-              onChange={(e) => { setAddress(e.target.value); clearError('address'); }}
+              onChange={(e) => {
+                setAddress(e.target.value);
+                clearError("address");
+              }}
               placeholder="Votre adresse complète"
-              className={errors.address ? 'input-error' : ''}
+              className={errors.address ? "input-error" : ""}
             />
-            {errors.address && <span className="error-message">{errors.address}</span>}
+            {errors.address && (
+              <span className="error-message">{errors.address}</span>
+            )}
           </div>
 
           <div className="form-group">
@@ -260,11 +297,16 @@ export default function Profile() {
             <input
               type="password"
               value={password}
-              onChange={(e) => { setPassword(e.target.value); clearError('password'); }}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                clearError("password");
+              }}
               placeholder="Nouveau mot de passe"
-              className={errors.password ? 'input-error' : ''}
+              className={errors.password ? "input-error" : ""}
             />
-            {errors.password && <span className="error-message">{errors.password}</span>}
+            {errors.password && (
+              <span className="error-message">{errors.password}</span>
+            )}
           </div>
         </div>
 
@@ -282,9 +324,11 @@ export default function Profile() {
               onChange={handleCardNumberChange}
               placeholder="1234 5678 9012 3456"
               maxLength="19"
-              className={`card-input ${errors.cardNumber ? 'input-error' : ''}`}
+              className={`card-input ${errors.cardNumber ? "input-error" : ""}`}
             />
-            {errors.cardNumber && <span className="error-message">{errors.cardNumber}</span>}
+            {errors.cardNumber && (
+              <span className="error-message">{errors.cardNumber}</span>
+            )}
           </div>
 
           <div className="form-group">
@@ -292,13 +336,17 @@ export default function Profile() {
             <input
               type="text"
               value={cardName}
-              onChange={(e) => { setCardName(e.target.value.toUpperCase()); clearError('cardName'); }}
-              placeholder="NOM PRENOM"
-              className={`card-input uppercase ${errors.cardName ? 'input-error' : ''}`}
+              onChange={(e) => {
+                setCardName(e.target.value.toUpperCase());
+                clearError("cardName");
+              }}
+              placeholder="NOM"
+              className={`card-input uppercase ${errors.cardName ? "input-error" : ""}`}
             />
-            {errors.cardName && <span className="error-message">{errors.cardName}</span>}
+            {errors.cardName && (
+              <span className="error-message">{errors.cardName}</span>
+            )}
           </div>
-
           <div className="form-grid">
             <div className="form-group">
               <label>Date d'expiration</label>
@@ -308,9 +356,11 @@ export default function Profile() {
                 onChange={handleExpiryChange}
                 placeholder="MM/AA"
                 maxLength="5"
-                className={`card-input ${errors.expiryDate ? 'input-error' : ''}`}
+                className={`card-input ${errors.expiryDate ? "input-error" : ""}`}
               />
-              {errors.expiryDate && <span className="error-message">{errors.expiryDate}</span>}
+              {errors.expiryDate && (
+                <span className="error-message">{errors.expiryDate}</span>
+              )}
             </div>
 
             <div className="form-group">
@@ -318,12 +368,17 @@ export default function Profile() {
               <input
                 type="text"
                 value={cvv}
-                onChange={(e) => { setCvv(e.target.value.replace(/\D/g, '').substring(0, 3)); clearError('cvv'); }}
+                onChange={(e) => {
+                  setCvv(e.target.value.replace(/\D/g, "").substring(0, 3));
+                  clearError("cvv");
+                }}
                 placeholder="123"
                 maxLength="3"
-                className={`card-input ${errors.cvv ? 'input-error' : ''}`}
+                className={`card-input ${errors.cvv ? "input-error" : ""}`}
               />
-              {errors.cvv && <span className="error-message">{errors.cvv}</span>}
+              {errors.cvv && (
+                <span className="error-message">{errors.cvv}</span>
+              )}
             </div>
           </div>
         </div>

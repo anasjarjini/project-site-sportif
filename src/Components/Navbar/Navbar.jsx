@@ -1,30 +1,27 @@
-// MyNavbar.jsx
 import React, { use } from "react";
 import { BsCart3, BsSearch, BsPerson } from "react-icons/bs";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Panier from "../panier/panier";
-import { useContext ,useState} from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../Cards/Context";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { HashLink } from "react-router-hash-link";
-
-import SportCards from "../Cards/card-type-sports";
-import SportsProducts from '../Cards/Soprtsproduct.json';
+import SportCards from "../Cards/Presentation_produits";
 import { GoHomeFill } from "react-icons/go";
 import { MdSportsBasketball } from "react-icons/md";
-import { IoFastFood } from "react-icons/io5";
+import { FaGamepad } from "react-icons/fa";
+import { MdComputer } from "react-icons/md";
 import { MdContactMail } from "react-icons/md";
 
-export function  Navbar({}) {
-const { cart, addToCart, searchText, setSearchText } = useContext(CartContext);
- 
-const handleChange = (e) => {
-  setSearchText(e.target.value);
-};
+export function Navbar({}) {
+  const { cart, searchText, setSearchText } =
+    useContext(CartContext);
 
+  const handleChange = (e) => {
+    setSearchText(e.target.value);
+  };
 
- 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
       <div className="container">
@@ -130,43 +127,55 @@ const handleChange = (e) => {
           </svg>
         </a>
 
-    
-
         <div className="collapse navbar-collapse" id="navbarNav">
-         <div className="collapse navbar-collapse" id="navbarNav">
-  <ul className="navbar-nav ms-auto me-auto">
-    <li className="nav-item">
-      <HashLink smooth className="nav-link nav-link-custom" to="/#">
-        <GoHomeFill size={24}/>
-        <span className="ms-2">Home</span>
-      </HashLink>
-    </li>
-    <li className="nav-item">
-      <HashLink smooth className="nav-link nav-link-custom" to="/#Product">
-        <MdSportsBasketball size={24}/>
-        <span className="ms-2">Product</span>
-      </HashLink>
-    </li>
-    <li className="nav-item">
-      <HashLink className="nav-link nav-link-custom" to="/#Jeux">
-        <IoFastFood size={24}/>
-        <span className="ms-2">Jeux</span>
-      </HashLink>
-    </li>
-    <li className="nav-item">
-      <HashLink smooth className="nav-link nav-link-custom" to="/#Contact">
-        <MdContactMail size={24}/>
-        <span className="ms-2" >Contact</span>
-      </HashLink>
-    </li>
-  </ul>
-</div>
-           
-          
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ms-auto me-auto">
+              <li className="nav-item">
+                <HashLink smooth className="nav-link nav-link-custom" to="/#">
+                  <div className="nav-icon-wrapper">
+                    <GoHomeFill size={24} />
+                    <span className="ms-2 text-aficherText">Accueil</span>
+                  </div>
+                </HashLink>
+              </li>
+              <li className="nav-item">
+                <HashLink
+                  smooth
+                  className="nav-link nav-link-custom"
+                  to="/#Product"
+                >
+                  <MdSportsBasketball size={24} />
+                  <span className="ms-2 text-aficherText">Sports</span>
+                </HashLink>
+              </li>
+              <li className="nav-item">
+                <HashLink className="nav-link nav-link-custom" to="/#Jeux">
+                  <MdComputer size={24} className="text text-center" />
+                  <span className="ms-2 text  text-center text-aficherText">
+                    Jeux
+                  </span>
+                </HashLink>
+              </li>
+              <li className="nav-item">
+                <HashLink
+                  smooth
+                  className="nav-link nav-link-custom"
+                  to="/#Contact"
+                >
+                  <MdContactMail size={24} />
+                  <span className="ms-2 text-aficherText">Contact</span>
+                </HashLink>
+              </li>
+            </ul>
+          </div>
 
           <ul className="navbar-nav">
             <li className="nav-item">
-              <form className="d-flex search-form" role="search" onSubmit={(e)=>e.preventDefault()}>
+              <form
+                className="d-flex search-form"
+                role="search"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 <input
                   className="form-control search-input"
                   type="search"
@@ -175,9 +184,9 @@ const handleChange = (e) => {
                   aria-label="Search"
                   onChange={handleChange}
                 />
-                <button className="btn search-btn" type="submit"  >
+                <button className="btn search-btn" type="submit">
                   <Link to="/search">
-                  <BsSearch size={18} color="#00A3CC" />
+                    <BsSearch size={18} color="#00A3CC" />
                   </Link>
                 </button>
               </form>
@@ -200,11 +209,8 @@ const handleChange = (e) => {
               </Link>
             </li>
           </ul>
-         
         </div>
       </div>
     </nav>
   );
 }
-
-

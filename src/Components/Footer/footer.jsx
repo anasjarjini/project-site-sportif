@@ -24,7 +24,7 @@ function Footer() {
                       style={{color: '#c0c0c0', transition: 'color 0.3s'}}
                       onMouseOver={(e) => e.target.style.color = '#fff'} 
                       onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
-                   Home
+                 Accueil
                 </HashLink>
               </li>
               <li className="mb-2">
@@ -32,15 +32,15 @@ function Footer() {
                           style={{color: '#c0c0c0', transition: 'color 0.3s'}}
                           onMouseOver={(e) => e.target.style.color = '#fff'} 
                           onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
-                  Product
+                Sports
                 </HashLink>
               </li>
               <li className="mb-2">
-                <HashLink smooth to="#" className="text-decoration-none small" 
+                <HashLink smooth to="/#Jeux" className="text-decoration-none small" 
                       style={{color: '#c0c0c0', transition: 'color 0.3s'}}
                       onMouseOver={(e) => e.target.style.color = '#fff'} 
                       onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
-                   Nourriture
+                       Jeux
                 </HashLink>
               </li>
               <li className="mb-2">
@@ -59,32 +59,31 @@ function Footer() {
           <div className="col-md-4 mb-5">
             <h5 className="fw-bold mb-3" style={{color: '#f0f0f0'}}>Suivez-nous</h5>
             <div className="d-flex gap-3">
-              <Link to="https://github.com/anasjarjini" 
+              <HashLink to="https://github.com/anasjarjini" 
                   
                     className="text-decoration-none" 
                     style={{color: '#c0c0c0', fontSize: '1.8rem', transition: 'color 0.3s'}}
                     onMouseOver={(e) => e.target.style.color = '#fff'} 
                     onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
                 <FaSquareGithub />
-              </Link>
+              </HashLink>
 
-              <Link to="" 
-                  
+              <HashLink to="https://www.linkedin.com/in/anas-el-jarjini-0159ba328" 
                     className="text-decoration-none" 
                     style={{color: '#c0c0c0', fontSize: '1.8rem', transition: 'color 0.3s'}}
                     onMouseOver={(e) => e.target.style.color = '#0077b5'} 
                     onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
                 <FaLinkedin />
-              </Link>
+              </HashLink>
 
-              <Link to="www.Whatsapp.com" 
+              <HashLink to="https://web.whatsapp.com/" 
                   
                     className="text-decoration-none" 
                     style={{color: '#c0c0c0', fontSize: '1.8rem', transition: 'color 0.3s'}}
                     onMouseOver={(e) => e.target.style.color = '#25D366'} 
                     onMouseOut={(e) => e.target.style.color = '#c0c0c0'}>
                 <FaWhatsapp />
-              </Link>
+              </HashLink>
             </div>
             <p className="small mt-3" style={{color: '#c0c0c0'}}>
               Rejoignez notre communauté sportive !
