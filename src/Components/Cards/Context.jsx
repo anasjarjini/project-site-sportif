@@ -17,11 +17,19 @@ const removeFromCart=(id)=>{
   );
 };
 
+const updateQuantity = (id, quantity) => {
+  setCart(cart =>
+    cart.map(p =>
+      p.id === id ? { ...p, quantity } : p
+    )
+  );
+}
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart ,removeFromCart,searchText,setSearchText}}>
+    <CartContext.Provider value={{ cart, addToCart ,removeFromCart,searchText,setSearchText,updateQuantity}}>
       {children}
     </CartContext.Provider>
   );
 }
+

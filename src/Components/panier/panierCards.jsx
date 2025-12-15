@@ -4,19 +4,23 @@ import { CartContext } from "../Cards/Context";
 import { InputGroup, FormControl } from 'react-bootstrap';
 
 const CardPanier = ({ id, name, image, price, description, oldPrice }) => {
+
   const [isRemoved, setIsRemoved] = useState(false);
   const [quantity, setQuantity] = useState(1);
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart,updateQuantity } = useContext(CartContext);
   
   const handleRemove = () => {
     removeFromCart(id);
     setIsRemoved(true);
   };
   
-  const handleQuantityChange = (e) => {
-    const val = parseInt(e.target.value);
-    if (!isNaN(val) && val > 0) setQuantity(val);
-  };
+const handleQuantityChange = (e) => {
+  const val = parseInt(e.target.value);
+  if (!isNaN(val) && val > 0) {
+    setQuantity(val);
+    updateQuantity(id, val);
+  }
+};
   
   if (isRemoved) {
     return null;
@@ -73,16 +77,10 @@ const CardPanier = ({ id, name, image, price, description, oldPrice }) => {
             className="fw-bold text-dark mb-0" 
             style={{ fontSize: '20px', color: '#2c3e50' }}
           >
-            {price} Dh
+            {(price*quantity).toFixed(2)} Dh
           </h1>
-          {oldPrice && (
-            <h3 
-              className="text-muted text-decoration-line-through small" 
-              style={{ fontSize: '13px' }}
-            >
-              {oldPrice} Dh
-            </h3>
-          )}
+          
+          
         </div>
       </div>
       

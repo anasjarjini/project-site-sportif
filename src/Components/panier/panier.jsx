@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import CardPanier from "./panierCards";
 import { useContext } from "react";
 import { CartContext } from "../Cards/Context";
 import { color } from "three/tsl";
+import { use } from "react";
 
 function Panier() {
   const { cart } = useContext(CartContext);
+ 
+const Total = cart.reduce(
+  (sum, produit) => sum + produit.price * (produit.quantity || 1), 0);
   const TextPanierVide =
     cart.length == 0 ? (
       <h4
@@ -15,7 +19,12 @@ function Panier() {
         aucun prduits dans le panier{" "}
       </h4>
     ) : (
-      ""
+        <h4
+        className="text text-center text-panier text-h-100"
+        style={{ color: "#4dff00ff"}}
+      >
+      Total : {Total.toFixed(2)} Dh
+      </h4>
     );
 
   return (
@@ -37,6 +46,7 @@ function Panier() {
         key={produit.id}
         className="col-6 d-flex justify-content-center mb-2"
       >
+        
         <CardPanier
           id={produit.id}
           name={produit.name}

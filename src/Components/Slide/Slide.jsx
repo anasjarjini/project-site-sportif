@@ -34,7 +34,7 @@ const slide = [
   title: 'Consoles & Accessoires Gaming',
   desc: 'Les meilleurs produits gaming - Des accessoires aux jeux rétro',
   btnText: 'Voir les Produits',
-  btnLink: '/#Product'
+  btnLink: '/#Jeux'
     }
 ];
   
