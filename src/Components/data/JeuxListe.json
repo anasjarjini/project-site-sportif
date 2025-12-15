@@ -2,8 +2,8 @@
   {
     "id": 30,
     "name": "Razer Blackshark V2 X - Vert",
-    "price": 599.00,
-    "oldPrice": 929.00 ,
+    "price": 599.0,
+    "oldPrice": 929.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/53/843346/1.jpg?2959",
     "category": "Accessoires Gaming",
@@ -11,11 +11,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-   {
+  {
     "id": 31,
     "name": "Sony Manette PlayStation 5 officielle DualSense blanche",
-    "price": 874.00,
-    "oldPrice": 1262.00  ,
+    "price": 874.0,
+    "oldPrice": 1262.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/68/681774/1.jpg?6590",
     "category": "Accessoires Gaming",
@@ -23,11 +23,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-     {
+  {
     "id": 32,
     "name": "Partagez ce produit EA Sports FC 26 PS5",
-    "price": 662.00,
-    "oldPrice": 799.00  ,
+    "price": 662.0,
+    "oldPrice": 799.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/83/004276/1.jpg?3553",
     "category": "Accessoires Gaming",
@@ -35,11 +35,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-     {
+  {
     "id": 33,
     "name": "Razer Souris Basilisk V3 RZ01-04000100-R3M1",
-    "price": 399.00 ,
-    "oldPrice": 679.00 ,
+    "price": 399.0,
+    "oldPrice": 679.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/80/343346/1.jpg?9927",
     "category": "Accessoires Gaming",
@@ -47,11 +47,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-     {
+  {
     "id": 34,
     "name": "Rockstar Grand Theft Auto V GTA 5 PS4 Édition Premium",
-    "price": 269.00 ,
-    "oldPrice": 399.00 ,
+    "price": 269.0,
+    "oldPrice": 399.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/84/328225/1.jpg?5493",
     "category": "Accessoires Gaming",
@@ -59,11 +59,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-    {
+  {
     "id": 35,
     "name": "Onikuma X12 Casque Gaming Filaire",
-    "price": 202.00 ,
-    "oldPrice": 399.00,
+    "price": 202.0,
+    "oldPrice": 399.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/47/543276/1.jpg?3094",
     "category": "Accessoires Gaming",
@@ -71,11 +71,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
- {
+  {
     "id": 36,
     "name": "Playstation Pack Console PS5 Standard ",
-    "price": 4978.00 ,
-    "oldPrice": 6000.00,
+    "price": 4978.0,
+    "oldPrice": 6000.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/63/216276/1.jpg?4572",
     "category": "  Consoles ",
@@ -83,11 +83,11 @@
     "reviews": 124,
     "description": "Maillot de football respirant conçu pour un confort optimal durant les matchs."
   },
-   {
+  {
     "id": 37,
     "name": "R36S Console de jeu portable rétro gaming écran IPS 3,5 ",
-    "price": 394.00  ,
-    "oldPrice": 950.00,
+    "price": 394.0,
+    "oldPrice": 950.0,
     "discount": 20,
     "image": "https://ma.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/58/882356/1.jpg?9248",
     "category": "  Jeux Rétro ",
